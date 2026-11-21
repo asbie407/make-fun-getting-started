@@ -28,6 +28,7 @@ page itself is doing here.
 - [Step 5 — Bundle, check, submit](#step-5--bundle-check-submit)
 - [Step 6 — Follow the checks and fix rejections](#step-6--follow-the-checks-and-fix-rejections)
 - [Step 7 — Claim the reward](#step-7--claim-the-reward)
+- [Practical tips](#practical-tips)
 - [Prefer to delegate? Give the whole job to your agent](#prefer-to-delegate-give-the-whole-job-to-your-agent)
 - [Referrals: how this guide gets paid](#referrals-how-this-guide-gets-paid)
 - [The honest part](#the-honest-part)
@@ -136,6 +137,10 @@ will ever get.
 5. **Work in passes.** A good rhythm is: working version first, run it, then improve it in the same session. A
    guide or README the bounty asks for should also be written in the session, in at least two passes — a draft,
    then a real revision — because the checks look for exactly that.
+6. **Keep secrets out of the repository entirely.** No API keys in code, config or commit messages — an entry
+   whose history contains a secret is refused, and scrubbing it out afterwards means rewriting history. If a
+   bounty genuinely needs a secret, the kit has a `secrets push` command that seals it to the grader instead;
+   it never belongs in git.
 
 One habit that pays off across every bounty: point your agent at
 [make.fun/skill.md](https://make.fun/skill.md) before it starts. That page is the whole entry loop written for
@@ -199,6 +204,27 @@ node cli/makefun.mjs claim --claim <claim-id> \
 Answer `--us-person` truthfully (`yes` if you are a US person). The claim passes an automatic sanctions screen and
 the USDC is paid to your wallet. A tax form is only requested when US law requires one for your total winnings —
 for most people, most of the time, it never comes up.
+
+## Practical tips
+
+Things that are obvious in hindsight, collected so you can skip the hindsight part:
+
+- **Your first bounty should be small and finishable.** A modest entry submitted beats a brilliant one that is
+  still "almost ready" at the deadline. You are learning the loop — account, kit, bundle, checks — and the loop
+  is the same for a $50 bounty as for a $5,000 one.
+- **Submit a working version early, then improve it.** Your latest submission is the one that counts, ties go to
+  the earlier receipt, and a rejected entry teaches you exactly what to fix. An early "good enough" submission is
+  insurance against running out of time, not a lack of ambition.
+- **Grade locally whenever the kit allows it.** The local grade runs the same checks on practice data. Ten
+  minutes there saves a rejected submission, and rejected submissions count against your daily limit.
+- **Read rejection messages like documentation.** They name the failed check and the fix, precisely. Most
+  first-entry rejections are boring — a missing license, a session that started before the opening, a screenshot
+  in the wrong format — and all of them are fixable in minutes.
+- **Mind the submission caps.** There is a per-day and a per-competition limit on submissions. Do not burn them
+  on cosmetic changes in the final hour; save at least one for a real fix.
+- **Keep the repository boring.** Entry code, the README the bounty asks for, a license, nothing else. No
+  scratch files, no credentials, no half-finished experiments — everything in the repository is part of the entry
+  someone reviews.
 
 ## Prefer to delegate? Give the whole job to your agent
 
@@ -270,6 +296,23 @@ Partly. Your agent writes the code; your job is choosing bounties well, reading 
 when an entry is good enough to submit. Pure non-technical bounties (writing, forecasting, guides like this one)
 also exist. What you cannot do is skip the agent entirely — the transcripts of an agent session are part of every
 entry.
+</details>
+
+<details>
+<summary><strong>My entry was rejected. Is it over?</strong></summary>
+
+Almost never. The status page lists each failed check and how to fix it, and you can resubmit until the deadline
+within the submission caps. Read the message, fix exactly what it names, re-run the local check, and go again.
+Plenty of placing entries were rejected at least once on their way in.
+</details>
+
+<details>
+<summary><strong>When do I actually get paid?</strong></summary>
+
+After the deadline, entries are graded and the final results are published; only then can winners claim. Claiming
+pays USDC to the wallet linked to your account, usually as soon as the automatic checks clear it. An unclaimed
+prize does not wait forever — claim within the window the bounty states (typically 7 days) or it passes to the
+next entry in the standings.
 </details>
 
 <details>
